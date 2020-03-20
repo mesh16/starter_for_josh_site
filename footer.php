@@ -12,7 +12,7 @@
                 <!--col-md-6-->
 
                 <div class="col-md-6 text-center footer-content">
-                    <p>Terms and Conditions</p>
+                    <p>Worms and Conditions</p>
                     <img src="http://206.189.45.97/~mesh16/wp-content/themes/josh_theme/images/linkedin.png" alt=“linkedin”>
                     <img src="http://206.189.45.97/~mesh16/wp-content/themes/josh_theme/images/fb.png" alt="facebook">
                 </div>
