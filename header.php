@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-   <meta charset="<?php bloginfo('charset'); ?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
 
 
-	<title>
-		   <?php
+    <title>
+        <?php
 		      if (function_exists('is_tag') && is_tag()) {
 		         single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
 		      elseif (is_archive()) {
@@ -24,36 +24,36 @@
 		      if ($paged>1) {
 		         echo ' - page '. $paged; }
 		   ?>
-	</title>
-	
-	
-	<meta name="description" content="<?php bloginfo('description'); ?>">
+    </title>
 
 
-<!—Viewport responsive  -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">		
-	
-<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/_/img/favicon.ico">
-	<!-- This is the traditional favicon.
+    <meta name="description" content="<?php bloginfo('description'); ?>">
+
+
+    <!-- Viewport responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/_/img/favicon.ico">
+        <!-- This is the traditional favicon.
 		 - size: 16x16 or 32x32
 		 - transparency is OK -->
-    <!—Google fonts  -->
-        
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet">
+        <!-- Google fonts -->
 
-    
-       
-    <!-- CSS:  -->
+            <link href="https://fonts.googleapis.com/css?family=Raleway:400,800" rel="stylesheet">
 
-        
-	<!—remove all our styles and any Javascript code. Wordpress automatically calls javascript /jquery elsewhere, calls to javascript are not needed in the header or the footer now-->
-    
-<?php wp_head(); ?><!—very important that this is added-->
 
-    </head>
+
+            <!-- CSS:  -->
+
+
+            <!-- remove all our styles and any Javascript code. Wordpress automatically calls javascript /jquery elsewhere, calls to javascript are not needed in the header or the footer now-->
+
+                <?php wp_head(); ?><!-- very important that this is added-->
+
+</head>
 
 <body>
-    <header class="container-fluid herobg">">
+    <header class="container-fluid herobg"<?php if ( get_field(' headerbackgroundimage ') ) { echo 'style="background: url(' . get_field(' headerbackgroundimage ') . ')"'; } ?>>
         <!-- div for large image that stretches over the top of the page -->
 
 
@@ -69,12 +69,15 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="#">HOME</a></li>
-                        <li><a href="#">PROJECTS</a></li>
-                        <li><a href="#">PUBLICATIONS</a></li>
-                        <li><a href="#">CV</a></li>
-                        <li><a href="#">CONTACT</a></li>
+                        <?php wp_nav_menu(array(
+        'menu' => 'Top menu',
+        'items_wrap'=>'%3$s',
+        'container' => false,
+        'list_item_class' => "nav-item",
+        'link_class' => "nav-link",
+        )); ?>
                     </ul>
+
 
                 </div>
             </div>
@@ -85,7 +88,7 @@
 
         <div class="container">
             <!-- div that holds the content in the middle of the page -->
-            <h1>Games Design for the future</h1> <!-- main tag line -->
+            <h1><?php the_field('maintagline'); ?></h1> <!-- main tag line -->
 
         </div> <!-- container -->
 
