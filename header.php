@@ -86,9 +86,9 @@
 
 
 
-        <div class="container animated fadeInRight">
+        <div class="container">
             <!-- div that holds the content in the middle of the page -->
-            <h1><?php the_field('maintagline'); ?></h1> <!-- main tag line -->
+            <h1 class="animated fadeInRight"><?php the_field('maintagline'); ?></h1> <!-- main tag line -->
 
         </div> <!-- container -->
 
